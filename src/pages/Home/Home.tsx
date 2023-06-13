@@ -1,5 +1,4 @@
-import { Footer } from '../../components/Footer/Footer';
-import { Header } from '../../components/Header';
+import { Header, Footer } from '../../components';
 
 import styles from './Home.module.css';
 
