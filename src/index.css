@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  max-width: 548px;
+
+  font-family: 'Inter Variable';
+}
