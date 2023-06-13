@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 
 export const Header = () => {
   return (
     <header>
-      <p>#Vanlife</p>
+      <p className={styles.title}>#Vanlife</p>
       <nav>
         <Link to="/about">About</Link>
         <Link to="/vans">Vans</Link>
