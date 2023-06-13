@@ -3,11 +3,15 @@ import styles from './Header.module.css';
 
 export const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <p className={styles.title}>#Vanlife</p>
-      <nav>
-        <Link to="/about">About</Link>
-        <Link to="/vans">Vans</Link>
+      <nav className={styles.nav}>
+        <Link to="/about" className={styles.link}>
+          About
+        </Link>
+        <Link to="/vans" className={styles.link}>
+          Vans
+        </Link>
       </nav>
     </header>
   );
