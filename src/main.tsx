@@ -5,6 +5,8 @@ import { App } from './App.tsx';
 import './index.css';
 import '@fontsource-variable/inter';
 
+import './server';
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
