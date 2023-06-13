@@ -60,6 +60,7 @@
 .button {
   padding: 12px 22px;
 
+  border: none;
   border-radius: 10px;
   background-color: #161616;
 
