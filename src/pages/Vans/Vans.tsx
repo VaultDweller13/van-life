@@ -1,14 +1,17 @@
 import { useState, useEffect, ComponentProps } from 'react';
 
-import { Header, Card } from '../../components';
+import { Header, Card, Footer } from '../../components';
 import styles from './Vans.module.css';
+import { TypeButton } from '../../components/Buttons';
 
 type Van = ComponentProps<typeof Card>;
 
 export const Vans = () => {
-  const filterOptions = ['Simple', 'Luxury', 'Rugged'];
+  const filterOptions = ['simple', 'luxury', 'rugged'] as const;
   const filterButtons = filterOptions.map((option, index) => (
-    <button key={index}>{option}</button>
+    <TypeButton isDefault={true} type={option} key={index}>
+      {option}
+    </TypeButton>
   ));
   const [vansData, setVansData] = useState<Van[]>();
   const [error, setError] = useState<string>();
@@ -33,12 +36,15 @@ export const Vans = () => {
   return (
     <>
       <Header />
-      <h1>Explore our van options</h1>
-      <section className={styles.filters}>
-        {filterButtons}
-        <button>Clear filters</button>
-      </section>
-      <section>{!error && vans}</section>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Explore our van options</h1>
+        <section className={styles.filters}>
+          <div className={styles['filter-buttons']}>{filterButtons}</div>
+          <button>Clear filters</button>
+        </section>
+        <section className={styles.vans}>{!error && vans}</section>
+      </main>
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,26 @@
+.main {
+  padding: 54px 26px 83px;
+  background-color: #fff7ed;
+}
+
+.title {
+  margin-bottom: 22px;
+}
+
+.filters {
+  margin-bottom: 56px;
+}
+.filter-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.vans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.vans div {
+  width: 46%;
+}

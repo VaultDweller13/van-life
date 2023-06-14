@@ -1,0 +1,23 @@
+.image {
+  width: 100%;
+  margin-bottom: 10px;
+
+  border-radius: 5px;
+}
+
+.name,
+.price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+
+  color: #161616;
+}
+
+.price-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 32px;
+
+  color: #161616;
+}
