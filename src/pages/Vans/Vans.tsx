@@ -40,7 +40,7 @@ export const Vans = () => {
         <h1 className={styles.title}>Explore our van options</h1>
         <section className={styles.filters}>
           <div className={styles['filter-buttons']}>{filterButtons}</div>
-          <button>Clear filters</button>
+          <button className={styles['button-clear']}>Clear filters</button>
         </section>
         <section className={styles.vans}>{!error && vans}</section>
       </main>
