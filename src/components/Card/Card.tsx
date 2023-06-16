@@ -15,10 +15,12 @@ export const Card = ({ imageUrl, name, price, type }: Van) => {
     <>
       <div className={styles.card}>
         <img src={imageUrl} alt="Van image" className={styles.image} />
-        <h3 className={styles.name}>{name}</h3>
-        <span className={styles.price}>
-          {price} <span className={styles['price-text']}>$/day</span>
-        </span>
+        <div className={styles.info}>
+          <h3 className={styles.name}>{name}</h3>
+          <p className={styles.price}>
+            ${price} <span className={styles['price-text']}>/day</span>
+          </p>
+        </div>
         <TypeButton type={type}>{type}</TypeButton>
       </div>
     </>

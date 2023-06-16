@@ -5,19 +5,30 @@
   border-radius: 5px;
 }
 
+.info {
+  display: flex;
+}
+
+.name {
+  flex: 1 0 auto;
+}
+
+.price {
+  flex-wrap: wrap;
+}
+.price-text {
+  display: block;
+}
+
 .name,
 .price {
   font-weight: 600;
   font-size: 20px;
-  line-height: 32px;
-
   color: #161616;
 }
 
 .price-text {
   font-weight: 500;
   font-size: 14px;
-  line-height: 32px;
-
   color: #161616;
 }
