@@ -1,4 +1,4 @@
-import { Header, Footer } from '../../components';
+import { Header, Footer, DefaultButton } from '../../components';
 
 import styles from './Home.module.css';
 
@@ -14,7 +14,7 @@ export const Home = () => {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <button className={styles.button}>Find your van</button>
+        <DefaultButton>Find your van</DefaultButton>
       </main>
       <Footer />
     </>

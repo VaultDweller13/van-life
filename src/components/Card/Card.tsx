@@ -11,7 +11,8 @@ export const Card = ({ imageUrl, name, price, type }: VanData) => {
         <div className={styles.info}>
           <h3 className={styles.name}>{name}</h3>
           <p className={styles.price}>
-            ${price} <span className={styles['price-text']}>/day</span>
+            ${price}
+            <span className={styles['price-text']}>/day</span>
           </p>
         </div>
         <TypeButton type={type}>{type}</TypeButton>

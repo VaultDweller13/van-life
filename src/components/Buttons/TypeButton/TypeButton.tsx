@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from 'react';
 
-import { VanData } from '../../types';
+import { VanData } from '../../../types';
 import styles from './TypeButton.module.css';
 
 type TypeButtonProps = {
@@ -18,7 +18,7 @@ export const TypeButton = ({
     isDefault ? styles[`default-${type}`] : styles[`${type}`],
   ].join(' ');
 
-  const text = children?.toString() || '';
+  const text = children?.toString() || ' ';
   const buttonText = text[0].toUpperCase() + text.slice(1);
 
   return <button className={classNames}>{buttonText}</button>;
