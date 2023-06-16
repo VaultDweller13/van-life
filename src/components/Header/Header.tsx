@@ -8,6 +8,9 @@ export const Header = () => {
         #Vanlife
       </Link>
       <nav className={styles.nav}>
+        <Link to="/host" className={styles.link}>
+          Host
+        </Link>
         <Link to="/about" className={styles.link}>
           About
         </Link>
