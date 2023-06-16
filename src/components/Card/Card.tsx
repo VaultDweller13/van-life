@@ -1,16 +1,9 @@
-import { TypeButton, type TypeButtonType } from '../Buttons';
+import { TypeButton } from '../Buttons';
+import { VanData } from '../../types';
+
 import styles from './Card.module.css';
 
-type Van = {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  imageUrl: string;
-  type: TypeButtonType;
-};
-
-export const Card = ({ imageUrl, name, price, type }: Van) => {
+export const Card = ({ imageUrl, name, price, type }: VanData) => {
   return (
     <>
       <div className={styles.card}>

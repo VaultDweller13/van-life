@@ -24,8 +24,10 @@
   row-gap: 27px;
 }
 
-.vans > div {
+.card {
   width: 46%;
+
+  text-decoration: none;
 }
 
 .button-clear {

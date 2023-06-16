@@ -1,10 +1,10 @@
-import { useState, useEffect, ComponentProps } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Header, Card, Footer } from '../../components';
-import styles from './Vans.module.css';
 import { TypeButton } from '../../components/Buttons';
-
-type Van = ComponentProps<typeof Card>;
+import { VanData } from '../../types';
+import styles from './Vans.module.css';
 
 export const Vans = () => {
   const filterOptions = ['simple', 'luxury', 'rugged'] as const;
@@ -13,17 +13,21 @@ export const Vans = () => {
       {option}
     </TypeButton>
   ));
-  const [vansData, setVansData] = useState<Van[]>();
+  const [vansData, setVansData] = useState<VanData[]>();
   const [error, setError] = useState<string>();
 
-  const vans = vansData?.map((data) => <Card key={data.id} {...data} />);
+  const vans = vansData?.map((data) => (
+    <Link to={`/vans/${data.id}`} className={styles.card} key={data.id}>
+      <Card {...data} />
+    </Link>
+  ));
 
   useEffect(() => {
     async function fetchData() {
       const response = await fetch('/api/vans');
 
       if (response.ok) {
-        const data = (await response.json()).vans as Van[];
+        const data = (await response.json()).vans;
         setVansData(data);
       } else {
         setError(`${response.status}: ${response.statusText}`);

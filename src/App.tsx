@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, About, Vans } from './pages';
+import { Home, About, Vans, VanDetails } from './pages';
 
 export const App = () => {
   return (
@@ -8,6 +8,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VanDetails />} />
       </Routes>
     </BrowserRouter>
   );

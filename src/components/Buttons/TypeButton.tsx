@@ -1,9 +1,10 @@
 import { type PropsWithChildren } from 'react';
+
+import { VanData } from '../../types';
 import styles from './TypeButton.module.css';
 
-export type TypeButtonType = 'simple' | 'rugged' | 'luxury';
 type TypeButtonProps = {
-  type: TypeButtonType;
+  type: VanData['type'];
   isDefault?: boolean;
 };
 
