@@ -32,3 +32,9 @@
 
   color: #4d4d4d;
 }
+
+.link:hover {
+  color: #161616;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
