@@ -1,0 +1,37 @@
+.button {
+  padding: 6px 22px;
+  background-color: #ffead0;
+
+  border: none;
+  border-radius: 5px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+.simple,
+.default-simple:hover,
+.default-simple:focus {
+  background: #e17654;
+  color: #ffead0;
+}
+
+.rugged,
+.default-rugged:hover,
+.default-rugged:focus {
+  background: #115e59;
+  color: #ffead0;
+}
+
+.luxury,
+.default-luxury:hover,
+.default-luxury:focus {
+  background: #161616;
+  color: #ffead0;
+}

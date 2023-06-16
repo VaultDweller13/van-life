@@ -1,0 +1,27 @@
+.main {
+  padding: 65px 26px;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url(home-bg.jpg);
+  background-size: cover;
+}
+
+.title {
+  margin-bottom: 23px;
+
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #ffffff;
+}
+
+.content {
+  margin-bottom: 52px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #ffffff;
+}
