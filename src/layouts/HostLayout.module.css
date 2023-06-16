@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  gap: 13px;
+
+  padding: 32px 26px 55px;
+}
+
+.nav a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  font-weight: 700;
+
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+
+  color: #161616;
+}

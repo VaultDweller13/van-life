@@ -1,3 +1,9 @@
+import styles from './Dashboard.module.css';
+
 export const Dashboard = () => {
-  return <h1>Host dashboard page</h1>;
+  return (
+    <main className={styles.main}>
+      <h1>Host dashboard page</h1>
+    </main>
+  );
 };
