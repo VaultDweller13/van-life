@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Header, Card, Footer } from '../../components';
+import { Card } from '../../components';
 import { TypeButton } from '../../components/Buttons';
 import { VanData } from '../../types';
 import styles from './Vans.module.css';
@@ -39,7 +39,6 @@ export const Vans = () => {
 
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>Explore our van options</h1>
         <section className={styles.filters}>
@@ -48,7 +47,6 @@ export const Vans = () => {
         </section>
         <section className={styles.vans}>{!error && vans}</section>
       </main>
-      <Footer />
     </>
   );
 };

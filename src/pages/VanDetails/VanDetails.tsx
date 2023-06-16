@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { DefaultButton, Footer, Header, TypeButton } from '../../components';
+import { DefaultButton, TypeButton } from '../../components';
 
 import { VanData } from '../../types';
 import styles from './VanDetails.module.css';
@@ -25,7 +25,6 @@ export const VanDetails = () => {
 
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <nav className={styles.nav}>
           <img src={arrow} />
@@ -53,7 +52,6 @@ export const VanDetails = () => {
           <h2>...Loading</h2>
         )}
       </main>
-      <Footer />
     </>
   );
 };

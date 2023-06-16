@@ -1,11 +1,10 @@
-import { Header, Footer, DefaultButton } from '../../components';
+import { DefaultButton } from '../../components';
 
 import styles from './Home.module.css';
 
 export const Home = () => {
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>
           You got the travel plans, we got the travel vans.
@@ -16,7 +15,6 @@ export const Home = () => {
         </p>
         <DefaultButton>Find your van</DefaultButton>
       </main>
-      <Footer />
     </>
   );
 };

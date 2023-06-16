@@ -1,10 +1,8 @@
-import { Header, Footer } from '../../components';
 import styles from './About.module.css';
 
 export const About = () => {
   return (
     <>
-      <Header />
       <main className={styles.main}>
         <section className={styles.hero}></section>
         <section className={styles.description}>
@@ -30,7 +28,6 @@ export const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 };
