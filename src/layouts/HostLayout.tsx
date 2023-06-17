@@ -23,6 +23,9 @@ export const HostLayout = () => {
         <NavLink to="/host/income" className={handleActive}>
           Income
         </NavLink>
+        <NavLink to="/host/vans" className={handleActive}>
+          Vans
+        </NavLink>
         <NavLink to="/host/reviews" className={handleActive}>
           Reviews
         </NavLink>

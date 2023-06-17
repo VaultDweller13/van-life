@@ -5,8 +5,10 @@ import {
   Vans,
   VanDetails,
   Income,
+  HostVans,
   Reviews,
   Dashboard,
+  HostVanInfo,
 } from './pages';
 import { Layout, HostLayout } from './layouts';
 
@@ -19,6 +21,8 @@ export const App = () => {
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVanInfo />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="about" element={<About />} />
