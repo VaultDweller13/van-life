@@ -22,7 +22,7 @@ export const VanInfoLayout = () => {
 
       if (response.ok) {
         const data = await response.json();
-        setVanData(data.vans[0]);
+        setVanData(data.vans);
       }
     }
 
