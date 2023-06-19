@@ -17,16 +17,16 @@ export const HostLayout = () => {
   return (
     <>
       <nav className={styles.nav}>
-        <NavLink to="/host" end className={handleActive}>
+        <NavLink to="." end className={handleActive}>
           Dashboard
         </NavLink>
-        <NavLink to="/host/income" className={handleActive}>
+        <NavLink to="income" className={handleActive}>
           Income
         </NavLink>
-        <NavLink to="/host/vans" className={handleActive}>
+        <NavLink to="vans" className={handleActive}>
           Vans
         </NavLink>
-        <NavLink to="/host/reviews" className={handleActive}>
+        <NavLink to="reviews" className={handleActive}>
           Reviews
         </NavLink>
       </nav>

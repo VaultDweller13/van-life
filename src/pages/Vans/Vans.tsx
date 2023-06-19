@@ -17,7 +17,7 @@ export const Vans = () => {
   const [error, setError] = useState<string>();
 
   const vans = vansData?.map((data) => (
-    <Link to={`/vans/${data.id}`} className={styles.card} key={data.id}>
+    <Link to={`${data.id}`} className={styles.card} key={data.id}>
       <Card {...data} />
     </Link>
   ));

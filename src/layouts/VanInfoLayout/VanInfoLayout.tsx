@@ -31,7 +31,7 @@ export const VanInfoLayout = () => {
 
   return (
     <main className={styles.main}>
-      <BackLink to="/host/vans" />
+      <BackLink />
       {vanData ? (
         <>
           <section className={styles.container}>
@@ -46,13 +46,13 @@ export const VanInfoLayout = () => {
             </TypeButton>
             <p className={styles.price}>${vanData.price}/day</p>
             <nav className={styles.nav}>
-              <NavLink to={`/host/vans/${id}`} end className={handleActive}>
+              <NavLink to="." end className={handleActive}>
                 Details
               </NavLink>
-              <NavLink to={`/host/vans/${id}/pricing`} className={handleActive}>
+              <NavLink to="pricing" className={handleActive}>
                 Pricing
               </NavLink>
-              <NavLink to={`/host/vans/${id}/photos`} className={handleActive}>
+              <NavLink to="photos" className={handleActive}>
                 Photos
               </NavLink>
             </nav>

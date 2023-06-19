@@ -25,7 +25,7 @@ export const VanDetails = () => {
   return (
     <>
       <main className={styles.main}>
-        <BackLink to="/vans" />
+        <BackLink />
         {vanData ? (
           <section className={styles.van}>
             <img

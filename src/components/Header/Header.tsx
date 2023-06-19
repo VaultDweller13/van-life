@@ -15,17 +15,17 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.title}>
+      <Link to="." className={styles.title}>
         #Vanlife
       </Link>
       <nav className={styles.nav}>
-        <NavLink to="/host" className={handleActive}>
+        <NavLink to="host" className={handleActive}>
           Host
         </NavLink>
-        <NavLink to="/about" className={handleActive}>
+        <NavLink to="about" className={handleActive}>
           About
         </NavLink>
-        <NavLink to="/vans" className={handleActive}>
+        <NavLink to="vans" className={handleActive}>
           Vans
         </NavLink>
       </nav>
