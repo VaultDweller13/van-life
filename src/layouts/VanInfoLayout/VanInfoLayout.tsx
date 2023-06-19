@@ -33,8 +33,8 @@ export const VanInfoLayout = () => {
     <main className={styles.main}>
       <BackLink />
       {vanData ? (
-        <>
-          <section className={styles.container}>
+        <div className={styles.container}>
+          <section className={styles.vanInfo}>
             <img
               src={vanData.imageUrl}
               alt="Van image"
@@ -45,6 +45,8 @@ export const VanInfoLayout = () => {
               {vanData.type}
             </TypeButton>
             <p className={styles.price}>${vanData.price}/day</p>
+          </section>
+          <section>
             <nav className={styles.nav}>
               <NavLink to="." end className={handleActive}>
                 Details
@@ -56,9 +58,9 @@ export const VanInfoLayout = () => {
                 Photos
               </NavLink>
             </nav>
-            <Outlet />
+            <Outlet context={vanData} />
           </section>
-        </>
+        </div>
       ) : (
         <h3>Loading...</h3>
       )}

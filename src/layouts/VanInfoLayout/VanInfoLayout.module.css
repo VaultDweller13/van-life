@@ -3,16 +3,18 @@
 }
 
 .container {
+  padding: 25px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.vanInfo {
   display: grid;
   grid-template-columns: minmax(160px, min-content) 1fr;
   grid-template-rows: repeat(1fr, 4);
   align-items: end;
   justify-items: start;
   column-gap: 20px;
-
-  padding: 25px;
-  border-radius: 6px;
-  background-color: #ffffff;
 }
 
 .image {
