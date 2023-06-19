@@ -21,7 +21,7 @@ export const HostVans = () => {
   }, []);
 
   const vans = vansData?.map((data) => (
-    <Link to={`${data.id}`} key={data.id} className={styles['card-link']}>
+    <Link to={data.id} key={data.id} className={styles['card-link']}>
       <HostVanCard {...data} />
     </Link>
   ));
