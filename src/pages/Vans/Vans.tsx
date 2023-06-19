@@ -1,23 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
-import { Card } from '../../components';
-import { TypeButton } from '../../components/Buttons';
+import { Card, Filters } from '../../components';
 import { VanData } from '../../types';
 import styles from './Vans.module.css';
 
 export const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const filterType = searchParams.get('type');
-
-  const filterOptions = ['simple', 'luxury', 'rugged'] as const;
-  const filterButtons = filterOptions.map((option, index) => (
-    <Link to={`?type=${option}`} key={index}>
-      <TypeButton isDefault={true} type={option}>
-        {option}
-      </TypeButton>
-    </Link>
-  ));
   const [vansData, setVansData] = useState<VanData[]>();
 
   useEffect(() => {
@@ -55,12 +45,7 @@ export const Vans = () => {
     <>
       <main className={styles.main}>
         <h1 className={styles.title}>Explore our van options</h1>
-        <section className={styles.filters}>
-          <div className={styles['filter-buttons']}>{filterButtons}</div>
-          <Link to=".">
-            <button className={styles['button-clear']}>Clear filters</button>
-          </Link>
-        </section>
+        <Filters filterType={filterType} setSearchParams={setSearchParams} />
         <section className={styles.vans}>{vans}</section>
       </main>
     </>

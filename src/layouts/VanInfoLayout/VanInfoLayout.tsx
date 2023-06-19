@@ -41,7 +41,7 @@ export const VanInfoLayout = () => {
               className={styles.image}
             />
             <h1 className={styles.title}>{vanData.name}</h1>
-            <TypeButton type={vanData.type} isClickable={false}>
+            <TypeButton type={vanData.type} isClickable={false} isActive={true}>
               {vanData.type}
             </TypeButton>
             <p className={styles.price}>${vanData.price}/day</p>
