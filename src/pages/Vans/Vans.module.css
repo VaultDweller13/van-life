@@ -10,8 +10,10 @@
 .filters {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 56px;
 }
+
 .filter-buttons {
   display: flex;
   gap: 20px;
