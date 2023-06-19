@@ -36,7 +36,12 @@ export const Vans = () => {
     : vansData;
 
   const vans = filteredVans.map((data) => (
-    <Link to={data.id} className={styles.card} key={data.id}>
+    <Link
+      to={data.id}
+      className={styles.card}
+      key={data.id}
+      state={searchParams.toString()}
+    >
       <Card {...data} />
     </Link>
   ));
