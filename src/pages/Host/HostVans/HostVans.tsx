@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './HostVans.module.css';
 import { VanData } from '../../../types';
 import { HostVanCard } from '../../../components/HostVanCard/HostVanCard';
@@ -19,7 +20,15 @@ export const HostVans = () => {
     fetchData();
   }, []);
 
-  const vans = vansData?.map((data) => <HostVanCard key={data.id} {...data} />);
+  const vans = vansData?.map((data) => (
+    <Link
+      to={`/host/vans/${data.id}`}
+      key={data.id}
+      className={styles['card-link']}
+    >
+      <HostVanCard {...data} />
+    </Link>
+  ));
 
   return (
     <main className={styles.main}>

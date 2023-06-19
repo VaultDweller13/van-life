@@ -8,9 +8,11 @@ import {
   HostVans,
   Reviews,
   Dashboard,
-  HostVanInfo,
+  Details,
+  Pricing,
+  Photos,
 } from './pages';
-import { Layout, HostLayout } from './layouts';
+import { Layout, HostLayout, VanInfoLayout } from './layouts';
 
 export const App = () => {
   return (
@@ -22,7 +24,11 @@ export const App = () => {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVanInfo />} />
+            <Route path="vans/:id" element={<VanInfoLayout />}>
+              <Route index element={<Details />} />
+              <Route path="pricing" element={<Pricing />} />
+              <Route path="photos" element={<Photos />} />
+            </Route>
             <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="about" element={<About />} />

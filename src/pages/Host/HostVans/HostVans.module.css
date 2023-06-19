@@ -17,3 +17,7 @@
   flex-direction: column;
   gap: 15px;
 }
+
+.card-link {
+  text-decoration: none;
+}

@@ -3,23 +3,6 @@
   background-color: #fff7ed;
 }
 
-.nav {
-  display: flex;
-  gap: 5px;
-
-  margin-bottom: 40px;
-}
-
-.link-back {
-  font-weight: 500;
-  font-size: 15.9462px;
-
-  text-decoration-line: underline;
-  text-underline-offset: 4px;
-
-  color: #201f1d;
-}
-
 .image {
   width: 100%;
 
