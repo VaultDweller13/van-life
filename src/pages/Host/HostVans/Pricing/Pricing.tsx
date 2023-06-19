@@ -1,3 +1,15 @@
+import { useVanData } from '../../../../hooks';
+import styles from './Pricing.module.css';
+
 export const Pricing = () => {
-  return <h2>Pricing</h2>;
+  const { price } = useVanData();
+
+  return (
+    <article>
+      <p className={styles.price}>
+        ${price}
+        <span className={styles['price-text']}>/day</span>
+      </p>
+    </article>
+  );
 };
