@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { DefaultButton, TypeButton } from '../../components';
+import { useParams } from 'react-router-dom';
+import { BackLink, DefaultButton, TypeButton } from '../../components';
 
 import { VanData } from '../../types';
 import styles from './VanDetails.module.css';
-import arrow from '../../../public/arrow-left.svg';
 
 export const VanDetails = () => {
   const { id } = useParams();
@@ -26,12 +25,7 @@ export const VanDetails = () => {
   return (
     <>
       <main className={styles.main}>
-        <nav className={styles.nav}>
-          <img src={arrow} />
-          <Link to="/vans" className={styles['link-back']}>
-            Back to all vans
-          </Link>
-        </nav>
+        <BackLink />
         {vanData ? (
           <section className={styles.van}>
             <img

@@ -1,0 +1,23 @@
+.main {
+  padding: 0 26px;
+}
+
+.title {
+  margin-bottom: 32px;
+
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 34px;
+
+  color: #161616;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-link {
+  text-decoration: none;
+}

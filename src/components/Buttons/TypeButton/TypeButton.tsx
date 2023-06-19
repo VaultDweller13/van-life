@@ -6,16 +6,19 @@ import styles from './TypeButton.module.css';
 type TypeButtonProps = {
   type: VanData['type'];
   isDefault?: boolean;
+  isClickable?: boolean;
 };
 
 export const TypeButton = ({
   type,
   isDefault = false,
+  isClickable = true,
   children,
 }: PropsWithChildren<TypeButtonProps>) => {
   const classNames = [
     styles.button,
     isDefault ? styles[`default-${type}`] : styles[`${type}`],
+    isClickable ? null : styles.disabled,
   ].join(' ');
 
   const text = children?.toString() || ' ';

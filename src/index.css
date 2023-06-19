@@ -9,3 +9,15 @@ body {
 
   font-family: 'Inter Variable';
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  background-color: #fff7ed;
+}
+
+main {
+  flex-grow: 1;
+}

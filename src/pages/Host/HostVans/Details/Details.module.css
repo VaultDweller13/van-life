@@ -1,0 +1,17 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  font-weight: 700;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: #161616;
+}
+
+.text {
+  font-weight: 500;
+}

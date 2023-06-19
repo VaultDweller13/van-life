@@ -35,3 +35,7 @@
   background: #161616;
   color: #ffead0;
 }
+
+.disabled {
+  cursor: default;
+}
