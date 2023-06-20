@@ -13,6 +13,7 @@ import {
   Photos,
 } from './pages';
 import { Layout, HostLayout, VanInfoLayout } from './layouts';
+import { NotFound } from './pages/NotFound/NotFound';
 
 export const App = () => {
   return (
@@ -34,6 +35,7 @@ export const App = () => {
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
           <Route path="vans/:id" element={<VanDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

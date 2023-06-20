@@ -13,5 +13,13 @@
   text-align: center;
 
   color: #ffffff;
+  cursor: pointer;
+}
+
+.primary {
   background-color: #ff8c38;
+}
+
+.secondary {
+  background-color: #161616;
 }
