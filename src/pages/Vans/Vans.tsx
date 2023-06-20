@@ -40,7 +40,7 @@ export const Vans = () => {
       to={data.id}
       className={styles.card}
       key={data.id}
-      state={searchParams.toString()}
+      state={{ search: searchParams.toString(), type: filterType }}
     >
       <Card {...data} />
     </Link>
