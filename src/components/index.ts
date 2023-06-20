@@ -5,3 +5,4 @@ export { TypeButton } from './Buttons';
 export { DefaultButton } from './Buttons';
 export { BackLink } from './BackLink';
 export { Filters } from './Filters';
+export { ErrorFallback } from './ErrorFallback';

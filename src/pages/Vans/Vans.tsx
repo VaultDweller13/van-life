@@ -1,18 +1,11 @@
 import { Link, useSearchParams, useLoaderData } from 'react-router-dom';
 
 import { Card, Filters } from '../../components';
-import { VanData } from '../../types';
 import styles from './Vans.module.css';
+import { fetchVans } from '../../api';
 
 export const loader = async () => {
-  let data = null;
-  const response = await fetch('/api/vans');
-
-  if (response.ok) {
-    data = (await response.json()).vans;
-  }
-
-  return data as VanData[];
+  return fetchVans();
 };
 
 export const Vans = () => {
