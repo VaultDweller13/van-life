@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './BackLink.module.css';
-import arrow from '../../../public/arrow-left.svg';
+import arrow from '/arrow-left.svg';
 
 export const BackLink = () => {
   const { state } = useLocation();
