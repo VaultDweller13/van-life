@@ -1,27 +1,17 @@
-import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom';
 
 import { Card, Filters } from '../../components';
-import { VanData } from '../../types';
 import styles from './Vans.module.css';
+import { fetchVans } from '../../api';
+
+export const loader = async () => {
+  return fetchVans();
+};
 
 export const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const filterType = searchParams.get('type');
-  const [vansData, setVansData] = useState<VanData[]>();
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('/api/vans');
-
-      if (response.ok) {
-        const data = (await response.json()).vans;
-        setVansData(data);
-      }
-    }
-
-    fetchData();
-  }, []);
+  const vansData = useLoaderData() as Awaited<ReturnType<typeof loader>>;
 
   if (!vansData) {
     return (

@@ -8,6 +8,7 @@ import {
   Home,
   About,
   Vans,
+  vansDataLoader,
   VanDetails,
   Income,
   HostVans,
@@ -19,6 +20,7 @@ import {
 } from './pages';
 import { Layout, HostLayout, VanInfoLayout } from './layouts';
 import { NotFound } from './pages/NotFound/NotFound';
+import { ErrorFallback } from './components';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,7 +38,12 @@ const router = createBrowserRouter(
         <Route path="reviews" element={<Reviews />} />
       </Route>
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} />
+      <Route
+        path="vans"
+        element={<Vans />}
+        loader={vansDataLoader}
+        errorElement={<ErrorFallback />}
+      />
       <Route path="vans/:id" element={<VanDetails />} />
       <Route path="*" element={<NotFound />} />
     </Route>
