@@ -5,24 +5,30 @@ import styles from './TypeButton.module.css';
 
 type TypeButtonProps = {
   type: VanData['type'];
-  isDefault?: boolean;
   isClickable?: boolean;
+  isActive?: boolean;
+  onClick?: () => void;
 };
 
 export const TypeButton = ({
   type,
-  isDefault = false,
   isClickable = true,
+  isActive = false,
+  onClick,
   children,
 }: PropsWithChildren<TypeButtonProps>) => {
   const classNames = [
     styles.button,
-    isDefault ? styles[`default-${type}`] : styles[`${type}`],
     isClickable ? null : styles.disabled,
+    isActive ? styles[`${type}`] : styles[`default-${type}`],
   ].join(' ');
 
   const text = children?.toString() || ' ';
   const buttonText = text[0].toUpperCase() + text.slice(1);
 
-  return <button className={classNames}>{buttonText}</button>;
+  return (
+    <button className={classNames} onClick={onClick}>
+      {buttonText}
+    </button>
+  );
 };

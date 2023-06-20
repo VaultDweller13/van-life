@@ -1,6 +1,17 @@
 import { PropsWithChildren } from 'react';
 import styles from './DefaultButton.module.css';
 
-export const DefaultButton = ({ children }: PropsWithChildren) => {
-  return <button className={styles.button}>{children}</button>;
+type DefaultButtonProps = {
+  palette?: 'primary' | 'secondary';
+};
+
+export const DefaultButton = ({
+  palette = 'primary',
+  children,
+}: PropsWithChildren<DefaultButtonProps>) => {
+  return (
+    <button className={`${styles.button} ${styles[palette]}`}>
+      {children}
+    </button>
+  );
 };

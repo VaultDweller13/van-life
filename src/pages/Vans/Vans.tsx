@@ -1,26 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
-import { Card } from '../../components';
-import { TypeButton } from '../../components/Buttons';
+import { Card, Filters } from '../../components';
 import { VanData } from '../../types';
 import styles from './Vans.module.css';
 
 export const Vans = () => {
-  const filterOptions = ['simple', 'luxury', 'rugged'] as const;
-  const filterButtons = filterOptions.map((option, index) => (
-    <TypeButton isDefault={true} type={option} key={index}>
-      {option}
-    </TypeButton>
-  ));
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filterType = searchParams.get('type');
   const [vansData, setVansData] = useState<VanData[]>();
-  const [error, setError] = useState<string>();
-
-  const vans = vansData?.map((data) => (
-    <Link to={`${data.id}`} className={styles.card} key={data.id}>
-      <Card {...data} />
-    </Link>
-  ));
 
   useEffect(() => {
     async function fetchData() {
@@ -29,23 +17,41 @@ export const Vans = () => {
       if (response.ok) {
         const data = (await response.json()).vans;
         setVansData(data);
-      } else {
-        setError(`${response.status}: ${response.statusText}`);
       }
     }
 
     fetchData();
   }, []);
 
+  if (!vansData) {
+    return (
+      <main className={styles.main}>
+        <h2>Loading...</h2>
+      </main>
+    );
+  }
+
+  const filteredVans = filterType
+    ? vansData?.filter((data) => data.type === filterType)
+    : vansData;
+
+  const vans = filteredVans.map((data) => (
+    <Link
+      to={data.id}
+      className={styles.card}
+      key={data.id}
+      state={{ search: searchParams.toString(), type: filterType }}
+    >
+      <Card {...data} />
+    </Link>
+  ));
+
   return (
     <>
       <main className={styles.main}>
         <h1 className={styles.title}>Explore our van options</h1>
-        <section className={styles.filters}>
-          <div className={styles['filter-buttons']}>{filterButtons}</div>
-          <button className={styles['button-clear']}>Clear filters</button>
-        </section>
-        <section className={styles.vans}>{!error && vans}</section>
+        <Filters filterType={filterType} setSearchParams={setSearchParams} />
+        <section className={styles.vans}>{vans}</section>
       </main>
     </>
   );

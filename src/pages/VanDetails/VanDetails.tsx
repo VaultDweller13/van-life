@@ -33,7 +33,9 @@ export const VanDetails = () => {
               alt="Van photo"
               className={styles.image}
             />
-            <TypeButton type={vanData.type}>{vanData.type}</TypeButton>
+            <TypeButton type={vanData.type} isActive={true} isClickable={false}>
+              {vanData.type}
+            </TypeButton>
             <h1 className={styles.title}>{vanData.name}</h1>
             <p className={styles.price}>
               ${vanData.price}
