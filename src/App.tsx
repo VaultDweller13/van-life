@@ -8,6 +8,7 @@ import {
   Home,
   About,
   Vans,
+  vansDataLoader,
   VanDetails,
   Income,
   HostVans,
@@ -36,7 +37,7 @@ const router = createBrowserRouter(
         <Route path="reviews" element={<Reviews />} />
       </Route>
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} />
+      <Route path="vans" element={<Vans />} loader={vansDataLoader} />
       <Route path="vans/:id" element={<VanDetails />} />
       <Route path="*" element={<NotFound />} />
     </Route>
